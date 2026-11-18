@@ -1,0 +1,24 @@
+# T002 [NFR] Application configuration. Secrets/hosts come from environment variables;
+# the defaults below are for local development against docker-compose only.
+server:
+  port: 8080
+
+spring:
+  application:
+    name: papertrail
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/papertrail}
+    username: ${DB_USERNAME:papertrail}
+    password: ${DB_PASSWORD:papertrail}
+  jpa:
+    hibernate:
+      ddl-auto: validate   # Flyway owns the schema. Never change this.
+    show-sql: true         # development only; disable later
+  flyway:
+    locations: classpath:db/migration
+
+papertrail:
+  crossref:
+    base-url: ${CROSSREF_BASE_URL:https://api.crossref.org}
+    connect-timeout: 5s
+    read-timeout: 10s

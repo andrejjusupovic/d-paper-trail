@@ -1,0 +1,5 @@
+# Shell scripts must keep LF (run on Linux in CI/Docker); Windows scripts keep CRLF
+* text=auto
+mvnw text eol=lf
+*.sh text eol=lf
+*.cmd text eol=crlf

@@ -1,0 +1,9 @@
+# Constitution 5: never commit secrets or build output
+.env
+target/
+.idea/
+*.iml
+.vscode/
+*.log
+# Machine-local Claude Code settings (may hold personal permissions); skills are committed
+.claude/settings.local.json
