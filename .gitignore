@@ -7,3 +7,5 @@ target/
 *.log
 # Machine-local Claude Code settings (may hold personal permissions); skills are committed
 .claude/settings.local.json
+# Obsidian window layout (changes every time the vault is opened)
+docs/.obsidian/workspace*.json
